@@ -6,7 +6,80 @@
 
 {% block config_form %}
 
-DEBUG
+<div class="row">
+<div class="col-md-12">
+<accordion>
+  <accordion-group>
+    <accordion-heading>Types</accordion-heading>
 
+    {% for spoke in spokes %}
+    <div class="row">
+      <div class="col-md-12">
+        <h4><img class="spoke_icon" src="{{spoke.icon}}">{{spoke.title}}</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <b>Workflow</b>
+      </div>
+      <div class="col-md-8">
+        {{spoke.workflow}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <b>Children</b>
+      </div>
+      <div class="col-md-8">
+        {{spoke.children}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <b>Explicit Children</b>
+      </div>
+      <div class="col-md-8">
+        {{spoke.explicit_children}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <b>Primary</b>
+      </div>
+      <div class="col-md-8">
+        {{spoke.primary}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <b>Implicitly addable</b>
+      </div>
+      <div class="col-md-8">
+        {{spoke.implicit_add}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <b>Indexable</b>
+      </div>
+      <div class="col-md-8">
+        {{spoke.add_to_index}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <b>Discussable</b>
+      </div>
+      <div class="col-md-8">
+        {{spoke.discussable}}
+      </div>
+    </div>
+    {% endfor %}
+  </accordion-group>
+  <accordion-group>
+    <accordion-heading>Workflows</accordion-heading>
+  </accordion-group>
+</accordion>
+</div></div>
 {% endblock %}
 
